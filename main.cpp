@@ -16,5 +16,7 @@ int main()
 
     cout<<"Top Ten "<<languages->get_title()<<"\n";
 
+    delete languages;
+
     return 0;
 }
