@@ -7,7 +7,7 @@ using std::cout;
 
 int main()
 {
-    TopTenList* languages = new TopTenList("Programming Languages");
+    TopTenList* languages = new TopTenList();
     Hyperlink cpp;
 
     cpp.text = "C++";
