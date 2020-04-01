@@ -16,12 +16,13 @@ class TopTenList : public IDirectionable
     string title;
 
   public:
-    void display_forward();
-    void display_backward();
     TopTenList(string title);
     void set_at(int index, Hyperlink link);
     Hyperlink get(int index);
     string get_title();
+    //Required for IDirectionable interface:
+    void display_forward();
+    void display_backward();
 };
 
 #endif
