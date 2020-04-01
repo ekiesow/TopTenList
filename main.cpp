@@ -8,10 +8,12 @@ using std::cout;
 
 int main()
 {
+    // variable delcarations
     TopTenList* languages = new TopTenList("Programming Languages");
     Gallery* emoticons = new Gallery();
     Hyperlink cpp;
 
+    // add the languages to the top ten list
     cpp.text = "C++";
     cpp.url = "https://www.cplusplus.com/";
     languages->set_at(1, cpp);
@@ -43,24 +45,25 @@ int main()
     cpp.url = "https://dart.dev/";
     languages->set_at(10, cpp);
 
-    emoticons->add(":)","Smile");
-    emoticons->add(":(","Frown");
-    emoticons->add(":()","Monkey");
+    // UTF-8 emojis
+    emoticons->add("\xF0\x9F\x98\x8A","Smile");
+    emoticons->add("\xF0\x9F\x98\x9E","Frown");
+    emoticons->add("\xF0\x9F\x99\x89","Monkey");
 
+    // display the emoticons backwards
     emoticons->display_backward();
-    languages->display_forward();
-
-
-
+    
+    cout << '\n';
+    
+    // print the title of the top ten list
     cout<<"Top Ten "<<languages->get_title()<<"\n";
 
-    languages->display_backward();
-
-    cout << '\n';
-
+    // display the top ten list forward
     languages->display_forward();
 
+    // clean up
     delete languages;
+    delete emoticons;
 
     return 0;
 }
